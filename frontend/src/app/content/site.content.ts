@@ -151,6 +151,6 @@ export const SITE: SiteContent = {
     left: '© 2026 Denizhan Kalkan',
     right: 'Built with Angular and TypeScript',
     // TODO: address of this project on GitHub. Shows a "View source" link when filled in.
-    sourceUrl: 'https://github.com/denizhankalkan/denizhankalkan.com',
+    sourceUrl: 'https://github.com/denizhankalkan/denizhan',
   },
 };
