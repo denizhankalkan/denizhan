@@ -1,0 +1,14 @@
+<section class="wrap section" id="about">
+  <div class="section-head">
+    <h2>About</h2>
+  </div>
+
+  <div class="about">
+    <p>{{ about.text }}</p>
+    <ul class="skills">
+      @for (skill of about.skills; track skill) {
+        <li>{{ skill }}</li>
+      }
+    </ul>
+  </div>
+</section>

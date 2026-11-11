@@ -1,0 +1,19 @@
+<app-kilim-border />
+<app-site-header />
+
+<main id="top">
+  <app-hero />
+  <app-crossing-band />
+  <app-about />
+
+  <!-- Work, products, freelance and outside work: one list per section in site.content.ts -->
+  @for (section of sections; track section.id) {
+    <app-work-list [section]="section" />
+  }
+
+  <app-path />
+  <app-contact />
+</main>
+
+<app-site-footer />
+<app-kilim-border />

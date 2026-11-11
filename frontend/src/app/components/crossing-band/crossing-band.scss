@@ -1,0 +1,23 @@
+:host {
+  display: block;
+}
+
+.band {
+  border-block: 1px solid var(--line);
+  background: var(--cream-deep);
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: clamp(170px, 26vw, 300px);
+  /* A sideways drag moves the pattern; an up or down drag still scrolls the page. */
+  touch-action: pan-y;
+}
+
+.ends {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 10px;
+}

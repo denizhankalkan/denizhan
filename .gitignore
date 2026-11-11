@@ -1,0 +1,17 @@
+# dependencies and build output
+node_modules/
+frontend/dist/
+frontend/.angular/
+backend/target/
+
+# the built site copied into the backend by `npm run build`
+backend/src/main/resources/static/*
+!backend/src/main/resources/static/.gitkeep
+
+# contact notes received by the backend
+backend/data/
+
+# system and editor files
+.DS_Store
+*.log
+.idea/

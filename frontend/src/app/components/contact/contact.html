@@ -1,0 +1,76 @@
+<section class="wrap section" id="hello">
+  <span class="label">Contact</span>
+  <p class="greeting">
+    {{ contact.greeting.plain }} <em>{{ contact.greeting.accent }}</em>
+  </p>
+
+  <div class="columns">
+    <div class="find-me">
+      <p>{{ contact.note }}</p>
+      <ul class="links">
+        @for (link of contact.links; track link.label) {
+          <li>
+            @if (link.url) {
+              <a [href]="link.url" target="_blank" rel="noopener">
+                {{ link.label }} <span aria-hidden="true">↗</span>
+              </a>
+            } @else {
+              <span class="pending">{{ link.label }}</span>
+            }
+          </li>
+        }
+      </ul>
+    </div>
+
+    @if (contact.showForm) {
+    <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+      <div class="field" [class.invalid]="invalid('name')">
+        <label class="label" for="contact-name">Name</label>
+        <input id="contact-name" type="text" formControlName="name" autocomplete="name" />
+        @if (invalid('name')) {
+          <small>Please add your name.</small>
+        }
+      </div>
+
+      <div class="field" [class.invalid]="invalid('email')">
+        <label class="label" for="contact-email">Email</label>
+        <input id="contact-email" type="email" formControlName="email" autocomplete="email" />
+        @if (invalid('email')) {
+          <small>Please add an email address I can reply to.</small>
+        }
+      </div>
+
+      <div class="field" [class.invalid]="invalid('message')">
+        <label class="label" for="contact-message">Message</label>
+        <textarea id="contact-message" rows="4" formControlName="message"></textarea>
+        @if (invalid('message')) {
+          <small>Please write a message of up to 2,000 characters.</small>
+        }
+      </div>
+
+      <!-- Hidden from people; bots tend to fill it in. -->
+      <div class="trap" aria-hidden="true">
+        <label for="contact-website">Website</label>
+        <input id="contact-website" type="text" formControlName="website" tabindex="-1" autocomplete="off" />
+      </div>
+
+      <div class="send">
+        <button type="submit" [disabled]="state() === 'sending'">
+          {{ state() === 'sending' ? 'Sending' : 'Send note' }}
+        </button>
+
+        <p class="status" role="status">
+          @switch (state()) {
+            @case ('sent') {
+              Sent. Thank you, I will reply soon.
+            }
+            @case ('failed') {
+              The note could not be sent. Please try again in a moment.
+            }
+          }
+        </p>
+      </div>
+    </form>
+    }
+  </div>
+</section>

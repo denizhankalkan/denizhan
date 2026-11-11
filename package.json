@@ -1,0 +1,15 @@
+{
+  "name": "denizhankalkan.com",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio site: Angular frontend, Spring Boot backend.",
+  "scripts": {
+    "setup": "npm --prefix frontend install",
+    "start:frontend": "npm --prefix frontend start",
+    "start:backend": "mvn -f backend/pom.xml spring-boot:run",
+    "test:backend": "mvn -f backend/pom.xml test",
+    "build:frontend": "npm --prefix frontend run build",
+    "copy:frontend": "node scripts/copy-frontend.mjs",
+    "build": "npm run build:frontend && npm run copy:frontend && mvn -f backend/pom.xml package"
+  }
+}

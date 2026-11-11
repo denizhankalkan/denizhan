@@ -1,0 +1,37 @@
+<section class="wrap section" [id]="section().id">
+  <div class="section-head">
+    <h2>
+      {{ section().title.plain }} <em>{{ section().title.accent }}</em>
+    </h2>
+    @if (section().intro) {
+      <p>{{ section().intro }}</p>
+    }
+  </div>
+
+  @if (entries().length) {
+    <ul class="work">
+      @for (entry of entries(); track $index) {
+        <li>
+          <span class="label">{{ entry.kind }}</span>
+
+          <h3>
+            @if (entry.url) {
+              <a [href]="entry.url" target="_blank" rel="noopener">
+                {{ entry.title }} <span aria-hidden="true">↗</span>
+              </a>
+            } @else {
+              {{ entry.title }}
+            }
+          </h3>
+
+          <div class="detail">
+            <p>{{ entry.description }}</p>
+            @if (entry.image) {
+              <img [src]="entry.image" [alt]="entry.imageAlt || entry.title" loading="lazy" />
+            }
+          </div>
+        </li>
+      }
+    </ul>
+  }
+</section>

@@ -1,0 +1,15 @@
+<header class="wrap top">
+  <a class="mark" href="#top"><i aria-hidden="true"></i>{{ site.name.first }} {{ site.name.last }}</a>
+
+  <nav class="nav" aria-label="Sections">
+    @for (link of site.nav; track link.target) {
+      <a [href]="'#' + link.target">{{ link.label }}</a>
+    }
+  </nav>
+
+  <div class="clocks label" aria-label="Local time">
+    @for (clock of site.clocks; track clock.label; let i = $index) {
+      <span>{{ clock.label }} <b>{{ times()[i] }}</b></span>
+    }
+  </div>
+</header>

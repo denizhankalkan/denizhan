@@ -1,0 +1,58 @@
+{
+  // Run these from the Command Palette: "Tasks: Run Task".
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Frontend: start",
+      "type": "npm",
+      "script": "start",
+      "path": "frontend",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "typescript",
+        "pattern": "$tsc",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": { "regexp": "Changes detected" },
+          "endsPattern": { "regexp": "bundle generation (complete|failed)" }
+        }
+      }
+    },
+    {
+      "label": "Backend: start",
+      "type": "shell",
+      "command": "mvn spring-boot:run",
+      "options": { "cwd": "${workspaceFolder}/backend" },
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "spring-boot",
+        "pattern": { "regexp": "^\\[ERROR\\]\\s+(.*)$", "message": 1 },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": { "regexp": "Starting SiteApplication" },
+          "endsPattern": { "regexp": "Started SiteApplication|BUILD FAILURE" }
+        }
+      }
+    },
+    {
+      "label": "Start everything",
+      "dependsOn": ["Backend: start", "Frontend: start"],
+      "dependsOrder": "parallel",
+      "problemMatcher": []
+    },
+    {
+      "label": "Backend: test",
+      "type": "shell",
+      "command": "mvn test",
+      "options": { "cwd": "${workspaceFolder}/backend" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build one jar",
+      "type": "npm",
+      "script": "build",
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}

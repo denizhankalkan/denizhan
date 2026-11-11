@@ -1,0 +1,155 @@
+:host {
+  display: block;
+}
+
+.greeting {
+  margin: 10px 0 0;
+  font-weight: 600;
+  font-size: clamp(44px, 9.5vw, 124px);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+
+  em {
+    color: var(--cobalt);
+  }
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 40px clamp(32px, 7vw, 96px);
+  margin-top: clamp(32px, 6vw, 64px);
+}
+
+.find-me {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  p {
+    margin: 0;
+    max-width: 36ch;
+  }
+}
+
+.links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+
+  li {
+    border-bottom: 1px solid var(--line);
+  }
+
+  a,
+  .pending {
+    display: flex;
+    justify-content: space-between;
+    padding-block: 14px;
+    font-weight: 600;
+    font-size: clamp(20px, 2.4vw, 26px);
+    line-height: 1.2;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--cobalt);
+  }
+
+  /* A link whose address is still empty in site.content.ts. */
+  .pending {
+    color: var(--muted);
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  min-width: 0;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 8px 0 10px;
+    border: 0;
+    border-bottom: 1px solid var(--ink);
+    border-radius: 0;
+    background: transparent;
+    color: var(--ink);
+    font: inherit;
+    resize: vertical;
+
+    &:focus {
+      outline: none;
+      border-bottom-color: var(--cobalt);
+      box-shadow: 0 1px 0 var(--cobalt);
+    }
+  }
+
+  small {
+    font-size: 14px;
+    color: var(--madder);
+  }
+
+  &.invalid input,
+  &.invalid textarea {
+    border-bottom-color: var(--madder);
+  }
+}
+
+.trap {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.send {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+}
+
+button {
+  padding: 14px 28px;
+  border: 0;
+  border-radius: 0;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--cobalt);
+  }
+
+  &:disabled {
+    background: var(--muted);
+    cursor: default;
+  }
+}
+
+.status {
+  margin: 0;
+  min-width: 0;
+}
+
+@media (max-width: 760px) {
+  .columns {
+    grid-template-columns: 1fr;
+  }
+}

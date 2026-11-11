@@ -1,0 +1,40 @@
+:host {
+  display: block;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 28px clamp(32px, 7vw, 96px);
+  align-items: start;
+
+  p {
+    margin: 0;
+    max-width: 60ch;
+    font-size: clamp(18px, 2vw, 21px);
+    line-height: 1.55;
+  }
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    padding: 6px 14px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 760px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+}

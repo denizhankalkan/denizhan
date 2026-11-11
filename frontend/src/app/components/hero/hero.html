@@ -1,0 +1,14 @@
+<div class="wrap hero">
+  <div class="label eyebrow">{{ site.eyebrow }}</div>
+
+  <h1>
+    <span>{{ site.name.first }}</span>
+    <span><em>{{ site.name.last }}</em></span>
+  </h1>
+
+  <figure class="portrait">
+    <img [src]="site.portrait.src" [alt]="site.portrait.alt" width="720" height="896" />
+  </figure>
+
+  <p class="intro">{{ site.intro }}</p>
+</div>

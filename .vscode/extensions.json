@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "angular.ng-template",
+    "esbenp.prettier-vscode",
+    "editorconfig.editorconfig",
+    "vscjava.vscode-java-pack",
+    "vmware.vscode-boot-dev-pack"
+  ]
+}

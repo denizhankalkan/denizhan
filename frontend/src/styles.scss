@@ -1,0 +1,114 @@
+/*
+ * Global look of the site: colours, type and the few classes every section shares.
+ * One sans-serif family throughout, for reading comfort. The band under the hero turns a
+ * plain grid (West) into eight-pointed stars (East); fine carpet borders close the page at both ends.
+ */
+:root {
+  /* colour */
+  --cream: #f4eddf;
+  --cream-deep: #ebe2cf;
+  --ink: #151b33;
+  --muted: #55576b;
+  --cobalt: #1f3a93;
+  --turquoise: #1f7f7a;
+  --madder: #8e2b22;
+  --gold: #b38b3d;
+  --line: rgba(21, 27, 51, 0.17);
+
+  /* type */
+  --font-body: 'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif;
+
+  /* layout */
+  --page-width: 1120px;
+  --gutter: 20px;
+
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--cobalt);
+  outline-offset: 4px;
+}
+
+/* Centres content and keeps the side gutter, also beside a phone's system bars. */
+.wrap {
+  max-width: var(--page-width);
+  margin-inline: auto;
+  padding-left: max(var(--gutter), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--gutter), env(safe-area-inset-right, 0px));
+}
+
+em {
+  font-style: normal;
+}
+
+/* Small uppercase label used for eyebrows, kinds and captions. */
+.label {
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.section {
+  padding-block: clamp(56px, 9vw, 112px);
+}
+
+.section-head {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 14px;
+  margin-bottom: clamp(28px, 5vw, 48px);
+
+  h2 {
+    font-weight: 600;
+    font-size: clamp(28px, 4.2vw, 44px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin: 0;
+  }
+
+  em {
+    color: var(--cobalt);
+  }
+
+  p {
+    margin: 10px 0 0;
+    max-width: 60ch;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
