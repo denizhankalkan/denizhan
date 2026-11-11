@@ -68,12 +68,14 @@ export const SITE: SiteContent = {
         {
           kind: 'Product · React',
           title: 'SignMyShirt',
+          url: 'https://github.com/denizhankalkan/signmyshirt',
           description:
             'The last-day-of-school shirt, moved online. Share a link, friends sign your shirt with a note, and you keep it for good.',
         },
         {
           kind: 'Product · Fashion',
           title: 'PERSONA',
+          url: 'https://github.com/denizhankalkan/persona',
           description:
             'A fashion app that starts with a character. Pick a persona or an era and see what they would wear, piece by piece.',
         },
@@ -138,7 +140,7 @@ export const SITE: SiteContent = {
     note: 'For work, freelance projects or film, find me here.',
     // TODO: paste your profile addresses between the quotes.
     links: [
-      { label: 'GitHub', url: '' },
+      { label: 'GitHub', url: 'https://github.com/denizhankalkan' },
       { label: 'LinkedIn', url: '' },
       { label: 'YouTube', url: '' },
     ],
@@ -149,6 +151,6 @@ export const SITE: SiteContent = {
     left: '© 2026 Denizhan Kalkan',
     right: 'Built with Angular and TypeScript',
     // TODO: address of this project on GitHub. Shows a "View source" link when filled in.
-    sourceUrl: '',
+    sourceUrl: 'https://github.com/denizhankalkan/denizhankalkan.com',
   },
 };
