@@ -6,6 +6,10 @@
     <span><em>{{ site.name.last }}</em></span>
   </h1>
 
+  @if (site.nameNote) {
+    <p class="name-note">{{ site.nameNote }}</p>
+  }
+
   <figure class="portrait">
     <img [src]="site.portrait.src" [alt]="site.portrait.alt" width="720" height="896" />
   </figure>

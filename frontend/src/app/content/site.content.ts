@@ -15,7 +15,8 @@ import { SiteContent } from './site.model';
  */
 export const SITE: SiteContent = {
   name: { first: 'Denizhan', last: 'Kalkan' },
-  eyebrow: 'Senior Software Engineer · Istanbul',
+  nameNote: 'Goes by Deniz · pronounced “deh-NEEZ”',
+  eyebrow: 'Senior Software Engineer · London',
   intro:
     "Seven years of software engineering across finance, IoT and aviation. I've worked on high-stakes financial systems, location-based technologies and digital experiences for Lufthansa Group airlines. Beyond engineering, I train developers, contribute to open-source projects and build products of my own.",
 
@@ -25,8 +26,8 @@ export const SITE: SiteContent = {
   },
 
   clocks: [
-    { label: 'IST', timeZone: 'Europe/Istanbul' },
     { label: 'LON', timeZone: 'Europe/London' },
+    { label: 'IST', timeZone: 'Europe/Istanbul' },
   ],
 
   nav: [
@@ -41,8 +42,7 @@ export const SITE: SiteContent = {
   crossing: { west: 'West · grid', east: 'East · star' },
 
   about: {
-    text:
-      "I'm Denizhan, a Senior Software Engineer based in Istanbul, with seven years of experience across banking, IoT and aviation. I began by building full-stack financial applications with React and .NET, then developed IoT and location-based systems using Python. Today, at Amadeus, I work on booking, loyalty and post-booking journeys for Lufthansa Group airlines using Angular and TypeScript. I enjoy the parts of engineering that go beyond writing code: working with international teams, making complex systems easier to use, sharing knowledge and turning independent ideas into working products. I have also pursued postgraduate studies in International Business at the University of Exeter, supported by a scholarship.",
+    text: "I'm Denizhan, a Senior Software Engineer based in London, with seven years of experience across banking, IoT and aviation. I began by building full-stack financial applications with React and .NET, then developed IoT and location-based systems using Python. Today, at Amadeus, I work on booking, loyalty and post-booking journeys for Lufthansa Group airlines using Angular and TypeScript. I enjoy the parts of engineering that go beyond writing code: working with international teams, making complex systems easier to use, sharing knowledge and turning independent ideas into working products. I studied Computer Science and Engineering at Namık Kemal University, and later pursued postgraduate studies in International Business Management at the University of Exeter, supported by a scholarship.",
     skills: [
       'TypeScript',
       'Angular',
@@ -61,7 +61,7 @@ export const SITE: SiteContent = {
   sections: [
     {
       id: 'work',
-      title: { plain: 'Professional', accent: 'work' },
+      title: { plain: 'Professional', accent: 'experience' },
       entries: [
         {
           kind: 'Aviation technology · Amadeus',
@@ -78,6 +78,8 @@ export const SITE: SiteContent = {
         {
           kind: 'AI education · Engineering enablement',
           title: 'GitHub Copilot Training',
+          image: 'media/copilot-training.jpg',
+          imageAlt: 'Deniz presenting a GitHub Copilot training session in a video call',
           description:
             'Delivered practical training for fellow engineers on AI-assisted development with GitHub Copilot, including agent workflows, custom instructions, skills and MCP-based tooling. I enjoy helping teams turn unfamiliar tools into useful everyday practices.',
         },
@@ -182,15 +184,6 @@ export const SITE: SiteContent = {
           imageAlt: 'Şişecam enterprise software collaboration',
         },
         {
-          kind: 'Austria · Refactoring',
-          title: 'Technology Company · Austria',
-          description:
-            'Refactoring and improvement work on an existing software codebase, with a focus on clearer structure, maintainability and performance.',
-          url: '',
-          image: '',
-          imageAlt: 'Software modernisation project in Austria',
-        },
-        {
           kind: 'Turkey · Process automation',
           title: 'Textile Operations Automation',
           description:
@@ -201,21 +194,12 @@ export const SITE: SiteContent = {
         },
         {
           kind: 'Russia · Part-time engineering',
-          title: 'Technology Company · Russia',
+          title: 'YCLIENTS',
           description:
-            'Part-time engineering collaboration with an international technology team, contributing to application development and ongoing product work.',
-          url: '',
+            'Part-time engineering collaboration with the YCLIENTS product team, contributing to application development and ongoing product work.',
+          url: 'https://www.yclients.ru/',
           image: '',
-          imageAlt: 'Part-time engineering collaboration',
-        },
-        {
-          kind: 'Turkey · Part-time engineering',
-          title: 'Technology Company · Turkey',
-          description:
-            'Part-time software engineering alongside my primary role, contributing to product development and software maintenance.',
-          url: '',
-          image: '',
-          imageAlt: 'Software engineering collaboration in Turkey',
+          imageAlt: 'YCLIENTS engineering collaboration',
         },
         // Future entries: UK client and Halil Ibrahim's company.
         // Add them only when the project scope and naming permission are confirmed.
@@ -233,15 +217,16 @@ export const SITE: SiteContent = {
           description:
             'An informal international coding circle in Kadıköy. Friends from different countries met to solve LeetCode challenges, compare approaches and keep learning together over coffee.',
           url: '',
-          image: '', // media/codehub-kadikoy.jpg
-          imageAlt: 'Friends solving coding problems at CodeHub Kadıköy',
+          image: 'media/codehub-kadikoy.jpg',
+          imageAlt: 'CodeHub Kadıköy members around a table with laptops and a projector',
+          images: ['media/codehub-kadikoy-session.jpg', 'media/codehub-kadikoy-friends.jpg'],
         },
         {
           kind: 'Open source · Artificial intelligence',
           title: 'Quivr',
           description:
             'Open-source contributions to an AI project, connecting my interest in intelligent systems with collaborative software development.',
-          url: '', // Add the specific public PR or contribution URL.
+          url: 'https://github.com/The-Vibe-Company/quivr',
           image: '',
           imageAlt: 'Quivr open-source AI contribution',
         },
@@ -249,7 +234,7 @@ export const SITE: SiteContent = {
           kind: 'Academic community · United Kingdom',
           title: 'University of Exeter · Data Science Society',
           description:
-            'Technology-focused community activities alongside postgraduate studies in International Business, continuing my interest in learning across disciplines.',
+            'Technology-focused community activities alongside postgraduate studies in International Business Management, continuing my interest in learning across disciplines.',
           url: '',
           image: '', // media/exeter-tech.jpg
           imageAlt: 'University of Exeter data science community',
@@ -276,43 +261,9 @@ export const SITE: SiteContent = {
     },
   ],
 
-  path: [
-    {
-      when: 'Now',
-      title: 'Amadeus · Lufthansa Group',
-      detail: 'Senior Software Engineer · airline digital products',
-    },
-    {
-      when: 'Before',
-      title: 'Boni Global',
-      detail: 'Software Engineer · IoT, tracking and mapping technologies',
-    },
-    {
-      when: 'Earlier',
-      title: 'Fibabank',
-      detail: 'Full-Stack Engineer · financial platforms',
-    },
-    {
-      when: 'Study',
-      title: 'University of Exeter',
-      detail: 'International Business Management & Innovation postgraduate studies · scholarship',
-    },
-    {
-      when: 'Study',
-      title: 'University of Namik Kemal',
-      detail: 'Computer Science and Engineering undergraduate studies',
-    },
-    {
-      when: 'In total',
-      title: 'Seven years',
-      detail: 'of professional software engineering',
-    },
-  ],
-
   contact: {
     greeting: { plain: 'Merhaba,', accent: 'hello.' },
-    note:
-      'For software engineering opportunities, independent projects, technical collaboration or creative work, get in touch.',
+    note: 'For software engineering opportunities, independent projects, technical collaboration or creative work, get in touch.',
     links: [
       { label: 'GitHub', url: 'https://github.com/denizhankalkan' },
       { label: 'LinkedIn', url: '' }, // TODO: Add verified profile URL.

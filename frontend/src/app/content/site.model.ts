@@ -30,6 +30,8 @@ export interface Entry {
   /** Optional picture: a path inside /public, e.g. "media/freelance/client-1.jpg". */
   image?: string;
   imageAlt?: string;
+  /** More pictures, shown side by side under the main one. */
+  images?: string[];
 }
 
 export interface Section {
@@ -40,12 +42,6 @@ export interface Section {
   entries: Entry[];
 }
 
-export interface PathEntry {
-  when: string;
-  title: string;
-  detail: string;
-}
-
 export interface SocialLink {
   label: string;
   /** Leave empty until you have the address: the label then shows without a link. */
@@ -54,6 +50,8 @@ export interface SocialLink {
 
 export interface SiteContent {
   name: { first: string; last: string };
+  /** Small line under the name, e.g. how you are called and how to say it. */
+  nameNote?: string;
   eyebrow: string;
   intro: string;
   portrait: Portrait;
@@ -62,7 +60,6 @@ export interface SiteContent {
   crossing: { west: string; east: string };
   about: { text: string; skills: string[] };
   sections: Section[];
-  path: PathEntry[];
   contact: {
     greeting: { plain: string; accent: string };
     note: string;

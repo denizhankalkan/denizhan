@@ -29,6 +29,13 @@
             @if (entry.image) {
               <img [src]="entry.image" [alt]="entry.imageAlt || entry.title" loading="lazy" />
             }
+            @if (entry.images?.length) {
+              <div class="more">
+                @for (picture of entry.images; track picture) {
+                  <img [src]="picture" [alt]="entry.imageAlt || entry.title" loading="lazy" />
+                }
+              </div>
+            }
           </div>
         </li>
       }
