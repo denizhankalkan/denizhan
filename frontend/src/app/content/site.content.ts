@@ -83,19 +83,96 @@ export const SITE: SiteContent = {
     },
     {
       id: 'freelance',
-      title: { plain: 'Freelance', accent: 'clients' },
-      intro: 'Software delivered for eight companies so far.',
-      // TODO: one row per client. A row appears on the site as soon as its title is filled in.
+      title: { plain: 'Freelance &', accent: 'consulting' },
+      intro: 'Freelance, consulting and part-time engineering for companies in Turkey and abroad.',
+      // Each row is one client or project. Extend `description` with what you built and the result.
       // For a picture, save it under frontend/public/media/freelance/ and set `image`.
+      // To hide a client's name, change `title` (for example "Technology company in Austria").
       entries: [
-        { kind: 'Client', title: '', description: '', url: '', image: '', imageAlt: '' },
-        { kind: 'Client', title: '', description: '', url: '', image: '', imageAlt: '' },
-        { kind: 'Client', title: '', description: '', url: '', image: '', imageAlt: '' },
-        { kind: 'Client', title: '', description: '', url: '', image: '', imageAlt: '' },
-        { kind: 'Client', title: '', description: '', url: '', image: '', imageAlt: '' },
-        { kind: 'Client', title: '', description: '', url: '', image: '', imageAlt: '' },
-        { kind: 'Client', title: '', description: '', url: '', image: '', imageAlt: '' },
-        { kind: 'Client', title: '', description: '', url: '', image: '', imageAlt: '' },
+        {
+          kind: 'Enterprise software',
+          title: 'Şişecam',
+          description:
+            'Enterprise software work for Şişecam, the Turkish glass and chemicals group.',
+          url: '',
+          image: '',
+          imageAlt: '',
+        },
+        {
+          kind: 'E-commerce · Web',
+          title: 'Knitology Fashion',
+          description: 'Web development for the online store of a fashion brand.',
+          url: '',
+          image: '',
+          imageAlt: '',
+        },
+        {
+          kind: 'Automation',
+          title: 'Textile automation',
+          description: 'Software that automates the business processes of a textile company.',
+          url: '',
+          image: '',
+          imageAlt: '',
+        },
+        {
+          kind: 'Automation',
+          title: 'Restaurant automation',
+          description: 'Software that automates the day-to-day operations of a restaurant.',
+          url: '',
+          image: '',
+          imageAlt: '',
+        },
+        {
+          kind: 'Refactoring · Performance',
+          title: 'Austrian company',
+          description:
+            'Refactoring and performance improvements on an existing codebase for a company in Austria.',
+          url: '',
+          image: '',
+          imageAlt: '',
+        },
+        {
+          kind: 'Web',
+          title: 'Wamda Studio',
+          description: 'Web development and optimisation for Wamda Studio.',
+          url: '',
+          image: '',
+          imageAlt: '',
+        },
+        {
+          kind: 'Part-time engineering',
+          title: 'Russian technology company',
+          description: 'Part-time software engineering for a technology company based in Russia.',
+          url: '',
+          image: '',
+          imageAlt: '',
+        },
+        {
+          kind: 'Part-time engineering',
+          title: 'Turkish company',
+          description: 'Part-time software engineering for a company in Turkey.',
+          url: '',
+          image: '',
+          imageAlt: '',
+        },
+        {
+          kind: 'Freelance development',
+          title: 'French marketing company',
+          description: 'Freelance development for a marketing company in France.',
+          url: '',
+          image: '',
+          imageAlt: '',
+        },
+        {
+          kind: 'Open source · AI',
+          title: 'Quivr',
+          description: 'Contribution to Quivr, an open-source AI project.',
+          url: '',
+          image: '',
+          imageAlt: '',
+        },
+        // TODO: British company. Hidden until the title and the scope of the work are filled in.
+        { kind: 'Freelance', title: '', description: '', url: '', image: '', imageAlt: '' },
       ],
     },
     {
