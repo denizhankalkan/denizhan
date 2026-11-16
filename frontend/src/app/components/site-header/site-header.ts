@@ -1,9 +1,11 @@
 import { Component, DestroyRef, afterNextRender, inject, signal } from '@angular/core';
 import { SITE } from '../../content/site.content';
 import { timeIn } from '../../helpers/clock';
+import { TulipMark } from '../tulip-mark/tulip-mark';
 
 @Component({
   selector: 'app-site-header',
+  imports: [TulipMark],
   templateUrl: './site-header.html',
   styleUrl: './site-header.scss',
 })

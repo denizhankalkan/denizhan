@@ -46,7 +46,7 @@ Frontend tek başına da çalışır. İletişim formu varsayılan olarak kapal�
 | Renkler, yazı tipleri, sayfa genişliği | `frontend/src/styles.scss` |
 | Fotoğraf ve diğer görseller | `frontend/public/media/` |
 | Bölümlerin sırası | `frontend/src/app/app.html` |
-| Halı bordürünün motifi | `frontend/src/app/helpers/kilim-pattern.ts` |
+| İsmin yanındaki lale | `frontend/src/app/components/tulip-mark/tulip-mark.ts` |
 | Izgaradan yıldıza geçen şerit | `frontend/src/app/helpers/crossing-renderer.ts` |
 | Backend adresi | `frontend/src/environments/` ve `frontend/proxy.conf.json` |
 | Backend portu, notların dosyası, izinli adresler | `backend/src/main/resources/application.properties` |

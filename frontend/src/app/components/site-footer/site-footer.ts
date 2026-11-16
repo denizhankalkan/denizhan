@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { SITE } from '../../content/site.content';
+import { TulipMark } from '../tulip-mark/tulip-mark';
 
 @Component({
   selector: 'app-site-footer',
+  imports: [TulipMark],
   template: `
     <footer class="wrap">
       <div class="name">
-        <i aria-hidden="true"></i>{{ site.name.first }} {{ site.name.last }}
+        <app-tulip-mark />{{ site.name.first }} {{ site.name.last }}
       </div>
 
       <nav aria-label="Footer">
@@ -48,14 +50,6 @@ import { SITE } from '../../content/site.content';
       font-size: 20px;
       font-weight: 600;
       letter-spacing: -0.01em;
-    }
-
-    .name i {
-      display: block;
-      width: 7px;
-      height: 7px;
-      background: var(--madder);
-      transform: rotate(45deg);
     }
 
     nav {

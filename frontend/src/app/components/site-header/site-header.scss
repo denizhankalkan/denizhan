@@ -19,14 +19,6 @@
   display: flex;
   align-items: center;
   gap: 10px;
-
-  i {
-    display: block;
-    width: 7px;
-    height: 7px;
-    background: var(--madder);
-    transform: rotate(45deg);
-  }
 }
 
 .nav {
