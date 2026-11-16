@@ -1,16 +1,23 @@
 import { SiteContent } from './site.model';
 
 /**
- * Every word, link and project on the site lives in this one file.
- * Change the text here and the page updates; no component needs touching.
+ * Central content file for denizhankalkan.com.
  *
- * Pictures go in frontend/public/media/ and are referenced as "media/your-file.jpg".
+ * Images should be placed in frontend/public/media/ and referenced as
+ * "media/filename.jpg". Leave image as an empty string until the asset exists.
+ *
+ * Editorial checklist before publication:
+ * - Confirm permission to publicly name each freelance client.
+ * - Confirm the exact scope of each engagement; do not add invented metrics.
+ * - Replace empty links and image fields once real assets are ready.
+ * - University of Exeter qualification is described as postgraduate studies,
+ *   not a conferred degree, until the final award is confirmed.
  */
 export const SITE: SiteContent = {
   name: { first: 'Denizhan', last: 'Kalkan' },
-  eyebrow: 'Senior Frontend Engineer · Istanbul',
+  eyebrow: 'Senior Software Engineer · Istanbul',
   intro:
-    'Seven years of Angular and TypeScript. I build the booking platforms that travellers of Lufthansa, SWISS, Austrian and Brussels Airlines use, currently for Amadeus.',
+    "Seven years of software engineering across finance, IoT and aviation. I've worked on high-stakes financial systems, location-based technologies and digital experiences for Lufthansa Group airlines. Beyond engineering, I train developers, contribute to open-source projects and build products of my own.",
 
   portrait: {
     src: 'media/portrait.jpg',
@@ -24,17 +31,31 @@ export const SITE: SiteContent = {
 
   nav: [
     { label: 'About', target: 'about' },
-    { label: 'Work', target: 'work' },
-    { label: 'Freelance', target: 'freelance' },
-    { label: 'Outside work', target: 'outside' },
+    { label: 'Engineering', target: 'work' },
+    { label: 'Products', target: 'products' },
+    { label: 'Client Work', target: 'freelance' },
+    { label: 'Beyond Code', target: 'outside' },
     { label: 'Contact', target: 'hello' },
   ],
 
   crossing: { west: 'West · grid', east: 'East · star' },
 
   about: {
-    text: 'I build the front end of large products: typed, tested, and shared across several airline brands at once. I also train other engineers to work with GitHub Copilot, and I hold a postgraduate degree from the University of Exeter Business School, earned on a scholarship.',
-    skills: ['TypeScript', 'Angular', 'NgRx', 'React', 'Playwright', 'GitHub Copilot'],
+    text:
+      "I'm Denizhan, a Senior Software Engineer based in Istanbul, with seven years of experience across banking, IoT and aviation. I began by building full-stack financial applications with React and .NET, then developed IoT and location-based systems using Python. Today, at Amadeus, I work on booking, loyalty and post-booking journeys for Lufthansa Group airlines using Angular and TypeScript. I enjoy the parts of engineering that go beyond writing code: working with international teams, making complex systems easier to use, sharing knowledge and turning independent ideas into working products. I have also pursued postgraduate studies in International Business at the University of Exeter, supported by a scholarship.",
+    skills: [
+      'TypeScript',
+      'Angular',
+      'React',
+      'C# / .NET',
+      'Python',
+      'Java',
+      'NgRx',
+      'RxJS',
+      'Playwright',
+      'CI/CD',
+      'GitHub Copilot',
+    ],
   },
 
   sections: [
@@ -43,183 +64,259 @@ export const SITE: SiteContent = {
       title: { plain: 'Professional', accent: 'work' },
       entries: [
         {
-          kind: 'Airline platform · Angular',
+          kind: 'Aviation technology · Amadeus',
           title: 'Lufthansa Group',
           description:
-            'Booking management for Lufthansa, SWISS, Austrian and Brussels Airlines on one multi-tenant platform: baggage, seats, meals and upgrades.',
+            'Building and improving digital travel experiences across Lufthansa, SWISS, Austrian Airlines and Brussels Airlines. My work covers booking management, post-booking flows, seats, baggage, upgrades and shared front-end functionality across airline brands.',
         },
         {
-          kind: 'Loyalty',
+          kind: 'Loyalty · Digital products',
           title: 'Miles & More',
-          description: 'Front-end engineering for the loyalty programme of the Lufthansa Group.',
+          description:
+            'Front-end engineering for loyalty and upgrade experiences in the Lufthansa Group ecosystem, connecting customer journeys with booking management and airline services.',
         },
         {
-          kind: 'Training',
-          title: 'GitHub Copilot training',
+          kind: 'AI education · Engineering enablement',
+          title: 'GitHub Copilot Training',
           description:
-            'Trainer in the train-the-trainer programme. I teach engineering teams to work with Copilot: agent mode, custom instructions, skills and MCP servers.',
+            'Delivered practical training for fellow engineers on AI-assisted development with GitHub Copilot, including agent workflows, custom instructions, skills and MCP-based tooling. I enjoy helping teams turn unfamiliar tools into useful everyday practices.',
+        },
+        {
+          kind: 'International engineering · Collaboration',
+          title: 'Engineering Beyond Borders',
+          description:
+            'Represented engineering work in international customer discussions and European PI Planning events, collaborating with product stakeholders and distributed teams to align technical delivery with business needs.',
+        },
+        {
+          kind: 'Banking · Full-stack engineering',
+          title: 'Fibabank',
+          description:
+            'Developed full-stack functionality for financial applications handling sensitive, high-value debt records. Worked with React, C# and .NET, including application access and authentication flows.',
+        },
+        {
+          kind: 'IoT · Location-based technology',
+          title: 'Boni Global',
+          description:
+            'Developed software for location-based tracking and mapping products in an IoT environment, working with Python and enterprise-facing use cases.',
         },
       ],
     },
     {
       id: 'products',
-      title: { plain: 'Own', accent: 'products' },
+      title: { plain: 'Independent', accent: 'products' },
       entries: [
         {
-          kind: 'Product · React',
+          kind: 'Independent product · React',
           title: 'SignMyShirt',
           url: 'https://github.com/denizhankalkan/signmyshirt',
           description:
-            'The last-day-of-school shirt, moved online. Share a link, friends sign your shirt with a note, and you keep it for good.',
+            'A digital take on the last-day-of-school tradition. Share a shirt, invite friends to leave notes and signatures, and keep the messages long after graduation. Designed as a playful, interactive product people can experience themselves.',
         },
         {
-          kind: 'Product · Fashion',
+          kind: 'Independent product · Fashion technology',
           title: 'PERSONA',
           url: 'https://github.com/denizhankalkan/persona',
           description:
-            'A fashion app that starts with a character. Pick a persona or an era and see what they would wear, piece by piece.',
+            'An exploration of fashion through characters, eras and personal identity. Start with a persona, discover the pieces behind their style, and turn cultural inspiration into a more interactive way of browsing fashion.',
         },
       ],
     },
     {
       id: 'freelance',
       title: { plain: 'Freelance &', accent: 'consulting' },
-      intro: 'Freelance, consulting and part-time engineering for companies in Turkey and abroad.',
-      // Each row is one client or project. Extend `description` with what you built and the result.
-      // For a picture, save it under frontend/public/media/freelance/ and set `image`.
-      // To hide a client's name, change `title` (for example "Technology company in Austria").
+      intro:
+        'Independent engineering and collaborations across Europe and beyond: web products, business automation, code modernisation and performance-focused improvements.',
       entries: [
         {
-          kind: 'Enterprise software',
+          kind: 'Germany · Backend optimisation',
+          title: 'GVB GmbH',
+          description:
+            'Backend memory optimisation for software supporting glass-production workflows. Focused on resource efficiency and improving the maintainability of memory-intensive application code.',
+          url: 'https://g-v-b.de/en/',
+          image: '', // media/freelance/gvb.jpg
+          imageAlt: 'GVB GmbH special-glass project',
+        },
+        {
+          kind: 'Turkey · Fashion e-commerce',
+          title: 'Knitology (KNTLGY)',
+          description:
+            'Website development for a contemporary fashion brand, bringing product presentation, responsive web experience and visual identity together in an online storefront.',
+          url: 'https://knitology.com.tr/',
+          image: '', // media/freelance/knitology.jpg
+          imageAlt: 'Knitology fashion website',
+        },
+        {
+          kind: 'France · B2B marketing technology',
+          title: 'Abiléo',
+          description:
+            'Freelance web-development collaboration with a French B2B marketing consultancy, supporting digital experiences for marketing and business communication.',
+          url: 'https://www.abileo.com/',
+          image: '', // media/freelance/abileo.jpg
+          imageAlt: 'Abiléo marketing website',
+        },
+        {
+          kind: 'Turkey · Business automation',
+          title: 'İlgisoft',
+          description:
+            'Work on software automation for hospital and restaurant operations, translating day-to-day business processes into practical application workflows.',
+          url: 'https://ilgisoft.com/',
+          image: '', // media/freelance/ilgisoft.jpg
+          imageAlt: 'İlgisoft business automation software',
+        },
+        {
+          kind: 'Egypt · Web development',
+          title: 'Wamda Studio',
+          description:
+            'Web development and optimisation for an Egyptian creative client, with attention to responsive presentation, usability and website performance.',
+          url: '', // Add the exact client's website; several businesses use this name.
+          image: '', // media/freelance/wamda.jpg
+          imageAlt: 'Wamda Studio website project',
+        },
+        {
+          kind: 'Turkey · Enterprise applications',
           title: 'Şişecam',
           description:
-            'Enterprise software work for Şişecam, the Turkish glass and chemicals group.',
-          url: '',
+            'Enterprise software collaboration within an industrial business environment, contributing to application development and business-facing software workflows.',
+          url: '', // Add only a relevant, approved public project link.
           image: '',
-          imageAlt: '',
+          imageAlt: 'Şişecam enterprise software collaboration',
         },
         {
-          kind: 'E-commerce · Web',
-          title: 'Knitology Fashion',
-          description: 'Web development for the online store of a fashion brand.',
-          url: '',
-          image: '',
-          imageAlt: '',
-        },
-        {
-          kind: 'Automation',
-          title: 'Textile automation',
-          description: 'Software that automates the business processes of a textile company.',
-          url: '',
-          image: '',
-          imageAlt: '',
-        },
-        {
-          kind: 'Automation',
-          title: 'Restaurant automation',
-          description: 'Software that automates the day-to-day operations of a restaurant.',
-          url: '',
-          image: '',
-          imageAlt: '',
-        },
-        {
-          kind: 'Refactoring · Performance',
-          title: 'Austrian company',
+          kind: 'Austria · Refactoring',
+          title: 'Technology Company · Austria',
           description:
-            'Refactoring and performance improvements on an existing codebase for a company in Austria.',
+            'Refactoring and improvement work on an existing software codebase, with a focus on clearer structure, maintainability and performance.',
           url: '',
           image: '',
-          imageAlt: '',
+          imageAlt: 'Software modernisation project in Austria',
         },
         {
-          kind: 'Web',
-          title: 'Wamda Studio',
-          description: 'Web development and optimisation for Wamda Studio.',
+          kind: 'Turkey · Process automation',
+          title: 'Textile Operations Automation',
+          description:
+            'Software work around repetitive textile-business processes, exploring ways to make operational workflows easier to manage through automation.',
           url: '',
           image: '',
-          imageAlt: '',
+          imageAlt: 'Textile business automation project',
         },
         {
-          kind: 'Part-time engineering',
-          title: 'Russian technology company',
-          description: 'Part-time software engineering for a technology company based in Russia.',
+          kind: 'Russia · Part-time engineering',
+          title: 'Technology Company · Russia',
+          description:
+            'Part-time engineering collaboration with an international technology team, contributing to application development and ongoing product work.',
           url: '',
           image: '',
-          imageAlt: '',
+          imageAlt: 'Part-time engineering collaboration',
         },
         {
-          kind: 'Part-time engineering',
-          title: 'Turkish company',
-          description: 'Part-time software engineering for a company in Turkey.',
+          kind: 'Turkey · Part-time engineering',
+          title: 'Technology Company · Turkey',
+          description:
+            'Part-time software engineering alongside my primary role, contributing to product development and software maintenance.',
           url: '',
           image: '',
-          imageAlt: '',
+          imageAlt: 'Software engineering collaboration in Turkey',
         },
-        {
-          kind: 'Freelance development',
-          title: 'French marketing company',
-          description: 'Freelance development for a marketing company in France.',
-          url: '',
-          image: '',
-          imageAlt: '',
-        },
-        {
-          kind: 'Open source · AI',
-          title: 'Quivr',
-          description: 'Contribution to Quivr, an open-source AI project.',
-          url: '',
-          image: '',
-          imageAlt: '',
-        },
-        // TODO: British company. Hidden until the title and the scope of the work are filled in.
-        { kind: 'Freelance', title: '', description: '', url: '', image: '', imageAlt: '' },
+        // Future entries: UK client and Halil Ibrahim's company.
+        // Add them only when the project scope and naming permission are confirmed.
       ],
     },
     {
       id: 'outside',
-      title: { plain: 'Outside of', accent: 'professional life' },
-      intro: 'Filmmaking, cinema and marketing projects.',
+      title: { plain: 'Beyond', accent: 'code' },
+      intro:
+        'Curiosity does not stop at work: coding meetups, open-source AI, photography, filmmaking, academic communities and writing.',
       entries: [
         {
-          kind: 'Short film',
+          kind: 'Coding community · Istanbul',
+          title: 'CodeHub Kadıköy',
+          description:
+            'An informal international coding circle in Kadıköy. Friends from different countries met to solve LeetCode challenges, compare approaches and keep learning together over coffee.',
+          url: '',
+          image: '', // media/codehub-kadikoy.jpg
+          imageAlt: 'Friends solving coding problems at CodeHub Kadıköy',
+        },
+        {
+          kind: 'Open source · Artificial intelligence',
+          title: 'Quivr',
+          description:
+            'Open-source contributions to an AI project, connecting my interest in intelligent systems with collaborative software development.',
+          url: '', // Add the specific public PR or contribution URL.
+          image: '',
+          imageAlt: 'Quivr open-source AI contribution',
+        },
+        {
+          kind: 'Academic community · United Kingdom',
+          title: 'University of Exeter · Data Science Society',
+          description:
+            'Technology-focused community activities alongside postgraduate studies in International Business, continuing my interest in learning across disciplines.',
+          url: '',
+          image: '', // media/exeter-tech.jpg
+          imageAlt: 'University of Exeter data science community',
+        },
+        {
+          kind: 'Filmmaking · Istanbul',
           title: 'One More Day in Istanbul',
           description:
-            'A short film about staying one day longer in the city that sits on two continents.',
+            'A short-film project exploring the city between two continents through everyday moments, movement and a personal sense of place.',
           url: '',
-          image: '',
-          imageAlt: '',
+          image: '', // media/one-more-day-istanbul.jpg
+          imageAlt: 'One More Day in Istanbul short-film project',
         },
-        // TODO: more films and marketing projects. Fill in a title to show a row.
-        { kind: 'Film', title: '', description: '', url: '', image: '', imageAlt: '' },
-        { kind: 'Marketing', title: '', description: '', url: '', image: '', imageAlt: '' },
-        { kind: 'Marketing', title: '', description: '', url: '', image: '', imageAlt: '' },
+        {
+          kind: 'Photography · Writing · Culture',
+          title: 'Stories Beyond Software',
+          description:
+            'Photography, history, cinema and essays about culture, identity and the small details of everyday life. I am interested in how technology and the humanities shape the way we see the world.',
+          url: '', // Add Substack or portfolio-of-photography URL when ready.
+          image: '',
+          imageAlt: 'Photography and cultural writing projects',
+        },
       ],
     },
   ],
 
   path: [
-    { when: 'Now', title: 'Amadeus', detail: 'Software engineer, Istanbul' },
+    {
+      when: 'Now',
+      title: 'Amadeus · Lufthansa Group',
+      detail: 'Senior Software Engineer · airline digital products',
+    },
     {
       when: 'Before',
-      title: 'Lufthansa Group · Miles & More',
-      detail: 'Airline booking and loyalty products',
+      title: 'Boni Global',
+      detail: 'Software Engineer · IoT, tracking and mapping technologies',
+    },
+    {
+      when: 'Earlier',
+      title: 'Fibabank',
+      detail: 'Full-Stack Engineer · financial platforms',
     },
     {
       when: 'Study',
       title: 'University of Exeter',
-      detail: 'Postgraduate degree, Business School · scholarship',
+      detail: 'International Business Management & Innovation postgraduate studies · scholarship',
     },
-    { when: 'In total', title: 'Seven years', detail: 'of professional software engineering' },
+    {
+      when: 'Study',
+      title: 'University of Namik Kemal',
+      detail: 'Computer Science and Engineering undergraduate studies',
+    },
+    {
+      when: 'In total',
+      title: 'Seven years',
+      detail: 'of professional software engineering',
+    },
   ],
 
   contact: {
     greeting: { plain: 'Merhaba,', accent: 'hello.' },
-    note: 'For work, freelance projects or film, find me here.',
-    // TODO: paste your profile addresses between the quotes.
+    note:
+      'For software engineering opportunities, independent projects, technical collaboration or creative work, get in touch.',
     links: [
       { label: 'GitHub', url: 'https://github.com/denizhankalkan' },
-      { label: 'LinkedIn', url: '' },
-      { label: 'YouTube', url: '' },
+      { label: 'LinkedIn', url: '' }, // TODO: Add verified profile URL.
+      { label: 'YouTube', url: '' }, // TODO: Add when ready.
     ],
     showForm: false,
   },
@@ -227,7 +324,6 @@ export const SITE: SiteContent = {
   footer: {
     left: '© 2026 Denizhan Kalkan',
     right: 'Built with Angular and TypeScript',
-    // TODO: address of this project on GitHub. Shows a "View source" link when filled in.
     sourceUrl: 'https://github.com/denizhankalkan/denizhan',
   },
 };
